@@ -34,6 +34,42 @@ You will find solutions to business problems such as:
 
 ---
 
+## 🗂️ Data Model (ERD)
+
+The project is built on a normalized relational data model that represents a real-world e-commerce system.  
+The schema captures customer behavior, sales transactions, product information, logistics, and payments.
+
+### Entity Relationship Diagram
+
+![Amazon ERD](assets/ERD.png)
+
+### Key Relationships
+
+- **Customers → Orders** (1-to-Many)  
+  A customer can place multiple orders.
+
+- **Orders → Order Items** (1-to-Many)  
+  Each order can contain multiple products.
+
+- **Products → Categories** (Many-to-1)  
+  Each product belongs to a single category.
+
+- **Orders → Payments** (1-to-Many)  
+  An order can have multiple payment attempts.
+
+- **Orders → Shipping** (1-to-1)  
+  Each order has associated shipping details.
+
+- **Products → Inventory** (1-to-Many by warehouse)  
+  Inventory levels are tracked per product per warehouse.
+
+- **Sellers → Orders** (1-to-Many)  
+  Sellers fulfill multiple orders.
+
+This data model enables robust analytical use cases such as revenue analysis, customer lifetime value, inventory alerts, return analysis, and seller performance evaluation.
+
+---
+
 ## 🧠 Business Questions Covered
 
 The `03_analysis_queries/` folder contains professionally structured SQL scripts that answer the following:
